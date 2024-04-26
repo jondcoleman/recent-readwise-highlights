@@ -3,6 +3,9 @@ interface Props {
   title: string;
 }
 
+import { Image } from "astro:assets";
+import myImage from "../assets/WhimsicalWalrusLogo.svg";
+
 const { title } = Astro.props;
 ---
 
@@ -34,9 +37,24 @@ const { title } = Astro.props;
     data-theme="night"
     class="prose-headings:font-[anybody] prose-headings:font-bold prose-h1:text-primary prose-h2:text-secondary container m-auto"
   >
-    <div class="navbar">
-      <a class="btn btn-ghost text-xl">Readwise Highlights</a>
+    <div class="navbar mt-2 mb-8">
+      <div class="flex-1">
+        <a class="btn btn-ghost">
+          <Image
+            src={myImage}
+            alt="A description of my image."
+            class="w-12 h-12"
+          />
+          <span class="pl-2">Readwise Highlights</span>
+        </a>
+      </div>
+
+      <div class="flex-none">
+        <a class="btn btn-ghost">About</a>
+      </div>
     </div>
-    <slot />
+    <div class="container">
+      <slot />
+    </div>
   </body>
 </html>

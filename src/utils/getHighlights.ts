@@ -58,8 +58,9 @@ export const getHighlights = async (token: string) => {
       fetchHighlights(token),
       fetchBooks(token),
     ]);
-
+    // @ts-ignore
     const highlights = highlightsRes.results;
+    // @ts-ignore
     const books = booksRes.results;
 
     // add books to highlights

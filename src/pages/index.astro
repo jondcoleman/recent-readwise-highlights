@@ -29,8 +29,8 @@ export const prerender = false;
 ---
 
 <Layout title="Recent Readwise Highlights">
-  <main class="mx-auto prose px-4">
-    <h1>Recent Highlights</h1>
+  <main class="mx-auto prose">
+    <h1 class="text-center" mx-auto>Recent Highlights</h1>
     {
       highlights ? (
         <HighlightList highlights={highlightsProps} />
