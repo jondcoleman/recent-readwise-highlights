@@ -9,28 +9,35 @@ const TokenInput = () => {
     setToken(e.target.value);
   };
 
+  const cookieOptions = {
+    path: "/",
+    maxAge: 60 * 60 * 24 * 365,
+    secure: true,
+    // httpOnly: true,
+  };
+
   const handleSaveToken = () => {
-    setCookie("token", token, { path: "/" });
+    setCookie("token", token, cookieOptions);
     // reload the page to fetch data with the new token
     window.location.reload();
   };
 
   return (
-    <div>
+    <form onSubmit={handleSaveToken}>
       <input
         type="text"
         value={token}
         onChange={handleTokenChange}
         placeholder="Enter token"
-        className="border rounded p-2"
+        className="border rounded p-2 mr-2 my-2 flex-grow w-full"
       />
       <button
-        onClick={handleSaveToken}
-        className="bg-blue-500 text-white px-4 py-2 rounded"
+        type="submit"
+        className="bg-blue-500 text-white px-4 py-2 m2 rounded"
       >
         Save Token
       </button>
-    </div>
+    </form>
   );
 };
 

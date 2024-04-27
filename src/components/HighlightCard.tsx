@@ -17,15 +17,14 @@ export const HighlightCard: React.FC<HighlightCardProps> = ({
   console.log("HighlightCardProps", quote, author, sourceId, sourceName);
   return (
     <div>
-      <blockquote>
-        <ReactMarkdown>{quote}</ReactMarkdown>
-      </blockquote>
-      <p className="ml-4">
+      <ReactMarkdown>{quote}</ReactMarkdown>
+
+      <p className="ml-2">
         - {author}
         <br />
         <a href={`https://readwise.io/bookreview/${sourceId}`}>{sourceName}</a>
       </p>
-      <hr />
+      <hr className=" my-6" />
     </div>
   );
 };
