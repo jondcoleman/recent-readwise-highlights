@@ -1,4 +1,9 @@
-A simple way to view Readwise highlights, sorted by recency, not grouped by their source.
+---
+layout: ../layouts/Layout.astro
+title: About
+---
+
+A simple way to view your most recent 100 Readwise highlights, sorted newest to oldest, not grouped by their source.
 
 ### Why I Created This App:
 

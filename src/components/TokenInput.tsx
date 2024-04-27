@@ -23,21 +23,29 @@ const TokenInput = () => {
   };
 
   return (
-    <form onSubmit={handleSaveToken}>
-      <input
-        type="text"
-        value={token}
-        onChange={handleTokenChange}
-        placeholder="Enter token"
-        className="border rounded p-2 mr-2 my-2 flex-grow w-full"
-      />
-      <button
-        type="submit"
-        className="bg-blue-500 text-white px-4 py-2 m2 rounded"
-      >
-        Save Token
-      </button>
-    </form>
+    <>
+      <form onSubmit={handleSaveToken}>
+        <input
+          type="text"
+          value={token}
+          onChange={handleTokenChange}
+          placeholder="Enter token"
+          className="border rounded p-2 mr-2 my-2 flex-grow w-full"
+        />
+        <button
+          type="submit"
+          className="bg-blue-500 text-white px-4 py-2 m2 rounded"
+        >
+          Save Token
+        </button>
+      </form>
+      <p>
+        You can get your{" "}
+        <a href="https://readwise.io/access_token">token from Readwise here</a>.{" "}
+        It is safely stored in your browser cookies and is not stored on the
+        server.
+      </p>
+    </>
   );
 };
 

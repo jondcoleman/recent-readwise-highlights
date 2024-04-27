@@ -29,17 +29,14 @@ export const prerender = false;
 ---
 
 <Layout title="Recent Readwise Highlights">
-  <main class="mx-auto prose">
-    <h2 class="text-center" mx-auto>Recent Highlights</h2>
-    {
-      highlights ? (
-        <HighlightList highlights={highlightsProps} />
-      ) : (
-        <>
-          <p>Enter a valid token to see highlights.</p>
-          <TokenInput client:load />
-        </>
-      )
-    }
-  </main>
+  {
+    highlights ? (
+      <HighlightList highlights={highlightsProps} />
+    ) : (
+      <>
+        <p>Enter a valid token to see highlights.</p>
+        <TokenInput client:load />
+      </>
+    )
+  }
 </Layout>
