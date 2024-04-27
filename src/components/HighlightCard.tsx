@@ -17,6 +17,7 @@ export const HighlightCard: React.FC<HighlightCardProps> = ({
   console.log("HighlightCardProps", quote, author, sourceId, sourceName);
   return (
     <div>
+      <hr className=" my-6" />
       <ReactMarkdown>{quote}</ReactMarkdown>
 
       <p className="ml-2">
@@ -24,7 +25,6 @@ export const HighlightCard: React.FC<HighlightCardProps> = ({
         <br />
         <a href={`https://readwise.io/bookreview/${sourceId}`}>{sourceName}</a>
       </p>
-      <hr className=" my-6" />
     </div>
   );
 };
