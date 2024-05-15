@@ -1,9 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import HighlightList from "../components/HighlightList.tsx";
 import type { HighlightCardProps } from "../components/HighlightCard.tsx";
 import TokenInput from "../components/TokenInput.tsx";
 import { getHighlights } from "../utils/getHighlights.ts";
+import { HighlightsContainer } from "../components/HighlightsContainer.tsx";
 
 let token;
 let highlights;
@@ -21,6 +21,7 @@ if (Astro.cookies.has("token")) {
       author: highlight.book.author,
       sourceId: highlight.book.id.toString(),
       sourceName: highlight.book.title,
+      category: highlight.book.category,
     }));
   }
 }
@@ -29,9 +30,12 @@ export const prerender = false;
 ---
 
 <Layout title="Recent Readwise Highlights">
+  <div class="mt-4"></div>
   {
     highlights ? (
-      <HighlightList highlights={highlightsProps} />
+      <>
+        <HighlightsContainer highlights={highlightsProps} client:load />
+      </>
     ) : (
       <>
         <p>Enter a valid token to see highlights.</p>

@@ -6,6 +6,7 @@ export interface HighlightCardProps {
   author: string;
   sourceId: string;
   sourceName: string;
+  category?: string;
 }
 
 export const HighlightCard: React.FC<HighlightCardProps> = ({
