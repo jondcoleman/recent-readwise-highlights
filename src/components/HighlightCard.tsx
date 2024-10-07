@@ -6,6 +6,7 @@ export interface HighlightCardProps {
   author: string;
   sourceId: string;
   sourceName: string;
+  sourceUrl?: string;
   category?: string;
 }
 
