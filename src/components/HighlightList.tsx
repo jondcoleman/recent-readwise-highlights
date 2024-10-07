@@ -18,6 +18,7 @@ export const HighlightList: React.FC<HighlightListProps> = ({ highlights }) => {
           sourceId={highlight.sourceId}
           sourceName={highlight.sourceName}
           sourceUrl={highlight.sourceUrl}
+          highlightUrl={highlight.highlightUrl}
         />
       ))}
     </div>

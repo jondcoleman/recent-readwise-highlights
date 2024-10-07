@@ -69,6 +69,7 @@ export const getHighlights = async (token: string) => {
       const book = books.find((book) => book.id === highlight.book_id);
       return { ...highlight, book };
     });
+    console.log(highlightsWithBooks);
 
     return highlightsWithBooks;
   } catch (error) {

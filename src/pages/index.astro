@@ -23,8 +23,10 @@ if (Astro.cookies.has("token")) {
       sourceName: highlight.book.title,
       sourceUrl: highlight.book.source_url,
       category: highlight.book.category,
+      highlightUrl: highlight.url,
     }));
   }
+  console.log(highlightsProps);
 }
 
 export const prerender = false;
